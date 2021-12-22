@@ -19,6 +19,46 @@ export const en = {
     takePhoto: 'Take A Photo',
     chooseFromLibrary: 'Choose From Library',
   },
+  login: {
+    title: 'Let’s get started!',
+    description: 'Sign in your account',
+    suggestPassword: 'Enter a password of at least 6 characters',
+    forgotPassword: 'Forgot Password?',
+    email: 'Email',
+    password: 'Password',
+    nextButton: 'Next',
+  },
+
+  forgotPassword: {
+    title: 'Forgot Password',
+    description: 'Please enter your email address to search for your account.',
+    email: 'Email',
+    password: 'Password',
+    confirmPassword: 'Re-type Password',
+    nextButton: 'Next',
+  },
+
+  otpPassword: {
+    title: 'Forgot Password',
+    description: 'We’re sending a verification code to your email',
+    subDescription: 'Enter it below to reset your password',
+    email: '{{email}}',
+    resendText: 'If you didn’t receive a code!',
+    resendButton: 'Resend',
+    placeHolder: 'Enter code',
+    nextButton: 'Next',
+  },
+
+  resetPassword: {
+    title: 'Create New Password',
+    description:
+      'Your new password must be different from previous used password.',
+    suggestPassword: 'Enter a password of at least 6 characters',
+    email: 'Email',
+    password: 'Password',
+    confirmPassword: 'Re-type Password',
+    nextButton: 'Next',
+  },
 
   //Calendar
   monthNames: [
