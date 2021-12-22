@@ -2,7 +2,7 @@
 
 <p>
   <a href="https://github.com/react-native-community/react-native-template-dattd/actions/workflows/npm-publish.yml">
-    <img alt="Build Status" src="https://github.com/react-native-community/react-native-template-dattd/actions/workflows/npm-publish.yml/badge.svg" />
+    <img alt="Build Status" src="https://github.com/react-native-community/react-native-template-typescript/actions/workflows/npm-publish.yml/badge.svg" />
   </a>
   <a href="https://github.com/react-native-community/react-native-template-dattd#readme">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />

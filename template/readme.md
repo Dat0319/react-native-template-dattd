@@ -1,6 +1,6 @@
 # Shop Stream
 
-Dateing application help connecting you to the one you like.
+Dating application help connecting you to the one you like.
 
 ## Getting Started
 

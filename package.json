@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emin93/react-native-template-dattd.git"
+    "url": "git+https://github.com/Dat0319/react-native-template-dattd.git"
   },
   "keywords": [
     "react-native",
@@ -20,10 +20,10 @@
     "template",
     "boilerplate"
   ],
-  "author": "Emin Khateeb <emin@emin.ch>",
+  "author": "Dat Tran <dattran0318@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emin93/react-native-template-dattd/issues"
+    "url": "https://github.com/Dat0319/react-native-template-dattd.git/issues"
   },
-  "homepage": "https://github.com/emin93/react-native-template-dattd#readme"
+  "homepage": "https://github.com/Dat0319/react-native-template-dattd.git#readme"
 }
