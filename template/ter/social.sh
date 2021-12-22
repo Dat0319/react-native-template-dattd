@@ -1,0 +1,1 @@
+yarn add @invertase/react-native-apple-authentication @react-native-google-signin/google-signin react-native-fbsdk-next

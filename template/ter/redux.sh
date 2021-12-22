@@ -1,0 +1,1 @@
+yarn add react-redux redux redux-logger redux-persist redux-saga @reduxjs/toolkit

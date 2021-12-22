@@ -5,27 +5,27 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './src/redux/store';
 import { AppNavigator, NavigationUtils } from '@navigation';
 import SplashScreen from 'react-native-splash-screen';
-import codePush from 'react-native-code-push';
+// import codePush from 'react-native-code-push';
 import FlashMessage from 'react-native-flash-message';
 import { AppNotification } from '@instances';
 import { PersistGate } from 'redux-persist/integration/react';
 import { StorageConstant, getStorage, api, Config } from '@instances';
 import { GlobalUI } from '@components';
 
-const CODE_PUSH_DEPLOYMENT_KEY = Platform.select({
-  ios: Config.CODE_PUSH_DEV
-    ? Config.CODE_PUSH_IOS_STAGING
-    : Config.CODE_PUSH_IOS_PRODUCTION,
-  android: Config.CODE_PUSH_DEV
-    ? Config.CODE_PUSH_ANDROID_STAGING
-    : Config.CODE_PUSH_ANDROID_PRODUCTION,
-});
+// const CODE_PUSH_DEPLOYMENT_KEY = Platform.select({
+//   ios: Config.CODE_PUSH_DEV
+//     ? Config.CODE_PUSH_IOS_STAGING
+//     : Config.CODE_PUSH_IOS_PRODUCTION,
+//   android: Config.CODE_PUSH_DEV
+//     ? Config.CODE_PUSH_ANDROID_STAGING
+//     : Config.CODE_PUSH_ANDROID_PRODUCTION,
+// });
 
-const pushOptions = {
-  // updateDialog: true,
-  installMode: codePush.InstallMode.IMMEDIATE,
-  deploymentKey: CODE_PUSH_DEPLOYMENT_KEY,
-};
+// const pushOptions = {
+//   // updateDialog: true,
+//   installMode: codePush.InstallMode.IMMEDIATE,
+//   deploymentKey: CODE_PUSH_DEPLOYMENT_KEY,
+// };
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -67,4 +67,5 @@ const App = () => {
   );
 };
 
-export default Config.CODE_PUSH_STATUS ? codePush(pushOptions)(App) : App;
+export default App;
+// export default Config.CODE_PUSH_STATUS ? codePush(pushOptions)(App) : App;
