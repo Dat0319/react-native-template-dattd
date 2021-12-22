@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {Device, FontWithBold, FontSize, Spacing, Colors} from '@assets';
+import { StyleSheet } from 'react-native';
+import { Device, FontWithBold, FontSize, Spacing, Colors } from '@assets';
 
 export const styles = StyleSheet.create({
   // intro
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   triangle: {
     position: 'absolute',
     right: 24,
-    transform: [{scale: 5}],
+    transform: [{ scale: 5 }],
   },
   logo_s: {
     position: 'absolute',

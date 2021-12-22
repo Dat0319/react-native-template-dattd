@@ -1,6 +1,6 @@
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-export {useSelector, useDispatch};
+export { useSelector, useDispatch };
 
 export * from './actions/index';
 export * from './actions/type';

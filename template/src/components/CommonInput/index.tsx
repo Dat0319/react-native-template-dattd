@@ -1,5 +1,12 @@
-import React, {useEffect, useState, useRef} from 'react';
-import {Colors, Device, FontSize, FontWithBold, Spacing, Images} from '@assets';
+import React, { useEffect, useState, useRef } from 'react';
+import {
+  Colors,
+  Device,
+  FontSize,
+  FontWithBold,
+  Spacing,
+  Images,
+} from '@assets';
 import {
   ViewStyle,
   View,
@@ -8,8 +15,8 @@ import {
   TextInputProps,
   Keyboard,
 } from 'react-native';
-import {CommonText} from '../CommonText';
-import {Image} from 'react-native';
+import { CommonText } from '../CommonText';
+import { Image } from 'react-native';
 
 export interface InputProps extends TextInputProps {
   containerStyleWrapper?: ViewStyle;
@@ -65,18 +72,20 @@ export const CommonInput = React.memo((props: InputProps) => {
           <CommonText
             style={[
               styles.labelText,
-              border && {color: Colors.dark, paddingBottom: Spacing.height16},
-            ]}>
+              border && { color: Colors.dark, paddingBottom: Spacing.height16 },
+            ]}
+          >
             {label}
             {/* {required && <CommonText text='*' color='red' style={{ fontSize: FontSize.Font15 }} />} */}
           </CommonText>
         )}
         <View
           style={[
-            {flexDirection: 'row'},
+            { flexDirection: 'row' },
             border && styles.wrapIcon,
-            iconLeft !== undefined && {paddingHorizontal: Spacing.width10},
-          ]}>
+            iconLeft !== undefined && { paddingHorizontal: Spacing.width10 },
+          ]}
+        >
           {iconLeft && (
             <Image
               source={iconLeft ? iconLeft : Images.ic_creditCard}
@@ -86,7 +95,7 @@ export const CommonInput = React.memo((props: InputProps) => {
           <TextInput
             placeholder={placeholder}
             keyboardType={keyboardType}
-            onChangeText={value => {
+            onChangeText={(value) => {
               setText(value);
               props.onChangeText && props.onChangeText(value);
             }}
@@ -94,7 +103,7 @@ export const CommonInput = React.memo((props: InputProps) => {
             ref={innerRef}
             multiline={multiline}
             blurOnSubmit={false}
-            onSubmitEditing={value => {
+            onSubmitEditing={(value) => {
               Keyboard.dismiss();
               props.onSubmitEditing && props.onSubmitEditing(value);
             }}

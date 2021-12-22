@@ -7,6 +7,6 @@ export * from './base';
 export * from './flashMessageCommon';
 export * from './getErrorCommon';
 export * from './pickerImages';
-export * from './pushNotification';
+// export * from './pushNotification';
 export * from './storage';
 export * from './validate';

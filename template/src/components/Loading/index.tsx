@@ -1,6 +1,6 @@
 import React from 'react';
-import {ViewProps, View, StyleSheet, ActivityIndicator} from 'react-native';
-import {Colors} from '@assets';
+import { ViewProps, View, StyleSheet, ActivityIndicator } from 'react-native';
+import { Colors } from '@assets';
 
 export interface Loading extends ViewProps {
   isLoading: boolean;
@@ -9,7 +9,7 @@ export interface Loading extends ViewProps {
   borderRadius?: number;
 }
 
-export const Loading: React.FC<Loading> = React.memo(props => {
+export const Loading: React.FC<Loading> = React.memo((props) => {
   let {
     isLoading,
     color = Colors.dark_blue,
@@ -19,12 +19,13 @@ export const Loading: React.FC<Loading> = React.memo(props => {
   } = props;
   if (isLoading) {
     return (
-      <View style={[styles.container, {borderRadius: borderRadius}, style]}>
+      <View style={[styles.container, { borderRadius: borderRadius }, style]}>
         <View
           style={[
             styles.background,
-            mini ? {backgroundColor: 'transparent'} : {},
-          ]}>
+            mini ? { backgroundColor: 'transparent' } : {},
+          ]}
+        >
           <ActivityIndicator size="small" color={mini ? '#fff' : color} />
         </View>
       </View>

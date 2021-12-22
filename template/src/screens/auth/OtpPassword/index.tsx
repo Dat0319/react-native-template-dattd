@@ -1,15 +1,15 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {CommonButton, CommonText, CommonInput, Header} from '@components';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {I18n} from '@instances';
-import {useModel} from './OtpPassword.hook';
-import {Props} from './types';
-import {styles} from './styles';
-import {Colors} from '@assets';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { Text, View } from 'react-native';
+import { CommonButton, CommonText, CommonInput, Header } from '@components';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { I18n } from '@instances';
+import { useModel } from './OtpPassword.hook';
+import { Props } from './types';
+import { styles } from './styles';
+import { Colors } from '@assets';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export const OtpPassword: React.FC<Props> = props => {
+export const OtpPassword: React.FC<Props> = (props) => {
   const {
     user,
     currentEmail,
@@ -21,7 +21,7 @@ export const OtpPassword: React.FC<Props> = props => {
   } = useModel(props);
 
   return (
-    <KeyboardAwareScrollView style={{backgroundColor: Colors.white}}>
+    <KeyboardAwareScrollView style={{ backgroundColor: Colors.white }}>
       <Header left="back" center="logo" />
       <View style={styles.container}>
         <View style={styles.info}>
@@ -31,7 +31,7 @@ export const OtpPassword: React.FC<Props> = props => {
           <Text style={styles.desc}>
             {I18n.trans('otpPassword.description')}
           </Text>
-          <Text style={{color: Colors.blue}}>{currentEmail}</Text>
+          <Text style={{ color: Colors.blue }}>{currentEmail}</Text>
           <CommonText style={styles.desc}>
             {I18n.trans('otpPassword.subDescription')}
           </CommonText>
@@ -43,7 +43,7 @@ export const OtpPassword: React.FC<Props> = props => {
           textAlign="center"
           placeholder="Enter code"
           value={user.otp}
-          onChangeText={value => _onChange('otp', value)}
+          onChangeText={(value) => _onChange('otp', value)}
           Error={errors.otp}
         />
 
@@ -54,7 +54,8 @@ export const OtpPassword: React.FC<Props> = props => {
           <TouchableOpacity
             activeOpacity={1}
             onPress={_onResendCode}
-            disabled={disable}>
+            disabled={disable}
+          >
             <Text style={styles.resendBtn}>
               {I18n.trans('otpPassword.resendButton')}
             </Text>

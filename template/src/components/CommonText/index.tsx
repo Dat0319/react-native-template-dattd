@@ -4,8 +4,8 @@ import {
   TextProps as TextProperties,
   TextStyle,
 } from 'react-native';
-import {Colors as valueColor, FontSize, FontWithBold, Spacing} from '@assets';
-import {I18n} from '@instances';
+import { Colors as valueColor, FontSize, FontWithBold, Spacing } from '@assets';
+import { I18n } from '@instances';
 
 export interface TextProps extends TextProperties {
   children?: React.ReactNode;
@@ -56,9 +56,10 @@ export const CommonText = React.memo((props: TextProps) => {
           fontSize: FontSize.Font13,
           lineHeight: Spacing.height25,
         },
-        bold ? {...FontWithBold.Bold_600} : {},
+        bold ? { ...FontWithBold.Bold_600 } : {},
         style,
-      ]}>
+      ]}
+    >
       {content}
     </ReactNativeText>
   );

@@ -1,11 +1,11 @@
-import {useState} from 'react';
-import {Props} from './types';
-import {validateForm, validateTrim, api} from '@instances';
-import {SCREEN_ROUTER} from '@assets';
-import {navigate} from '@navigation';
-import {useDispatch} from 'react-redux';
-import {authenticate} from '@redux';
-import {AuthService} from '@services';
+import { useState } from 'react';
+import { Props } from './types';
+import { validateForm, validateTrim, api } from '@instances';
+import { SCREEN_ROUTER } from '@assets';
+import { navigate } from '@navigation';
+import { useDispatch } from 'react-redux';
+import { authenticate } from '@redux';
+import { AuthService } from '@services';
 
 export function useModel(props: Props) {
   const dispatch = useDispatch();
@@ -44,13 +44,13 @@ export function useModel(props: Props) {
   };
 
   const _onChange = (key: string, value: any) => {
-    let userTemp = {...user};
+    let userTemp = { ...user };
     switch (key) {
       case 'email':
-        userTemp = Object.assign(userTemp, {email: value});
+        userTemp = Object.assign(userTemp, { email: value });
         break;
       case 'password':
-        userTemp = Object.assign(userTemp, {password: value});
+        userTemp = Object.assign(userTemp, { password: value });
         break;
     }
     setUser(userTemp);
@@ -70,10 +70,10 @@ export function useModel(props: Props) {
             token: result?.data?.access_token,
             user: result?.data?.user,
             locale: result?.locale,
-          }),
+          })
         );
       } else {
-        const {data} = result.data;
+        const { data } = result.data;
         if (Object.keys(data.errors).length > 0) {
           setErrors({
             email: !!data?.errors?.email ? data?.errors?.email[0] : '',

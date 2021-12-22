@@ -1,4 +1,4 @@
-import {GlobalUI} from './GlobalUI';
+import { GlobalUI } from './GlobalUI';
 
 class GlobalUIManager {
   view!: GlobalUI;

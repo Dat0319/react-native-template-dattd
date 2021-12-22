@@ -1,20 +1,19 @@
 import React from 'react';
-import {View} from 'react-native';
-import {CommonButton, CommonText, CommonInput, Header} from '@components';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {I18n} from '@instances';
-import {useModel} from './Login.hook';
-import {Props} from './types';
-import {styles} from './styles';
-import {LoginSocial} from '../LoginSocial';
-import {Colors} from '@assets';
+import { View } from 'react-native';
+import { CommonButton, CommonText, CommonInput, Header } from '@components';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { I18n } from '@instances';
+import { useModel } from './Login.hook';
+import { Props } from './types';
+import { styles } from './styles';
+import { Colors } from '@assets';
 
-export const Login: React.FC<Props> = props => {
-  const {user, errors, disable, _onChange, _onSubmit, _onForgot} =
+export const Login: React.FC<Props> = (props) => {
+  const { user, errors, disable, _onChange, _onSubmit, _onForgot } =
     useModel(props);
 
   return (
-    <KeyboardAwareScrollView style={{backgroundColor: Colors.white}}>
+    <KeyboardAwareScrollView style={{ backgroundColor: Colors.white }}>
       <Header center="logo" />
       <View style={styles.container}>
         <View style={styles.info}>
@@ -30,14 +29,14 @@ export const Login: React.FC<Props> = props => {
           placeholder={I18n.trans('login.email')}
           label={I18n.trans('login.email')}
           value={user.email}
-          onChangeText={value => _onChange('email', value)}
+          onChangeText={(value) => _onChange('email', value)}
           Error={errors.email}
         />
         <CommonInput
           placeholder={I18n.trans('login.password')}
           label={I18n.trans('login.password')}
           value={user.password}
-          onChangeText={value => _onChange('password', value)}
+          onChangeText={(value) => _onChange('password', value)}
           secureTextEntry
           Error={errors.password}
         />
@@ -55,7 +54,6 @@ export const Login: React.FC<Props> = props => {
         <CommonText onPress={_onForgot} style={styles.forgot}>
           {I18n.trans('login.forgotPassword')}
         </CommonText>
-        <LoginSocial type="login" />
       </View>
     </KeyboardAwareScrollView>
   );

@@ -1,10 +1,10 @@
-import {SCREEN_ROUTER} from '@assets';
-import {HeaderProps} from './index';
-import {navigate} from '@navigation';
-import {useNavigation} from '@react-navigation/native';
+import { SCREEN_ROUTER } from '@assets';
+import { HeaderProps } from './index';
+import { navigate } from '@navigation';
+import { useNavigation } from '@react-navigation/native';
 
 export function useModel(props: HeaderProps) {
-  let {left, right, onLeftPress, onRightPress} = props;
+  let { left, right, onLeftPress, onRightPress } = props;
   const navigation = useNavigation();
 
   const _onLeftPress = () => {

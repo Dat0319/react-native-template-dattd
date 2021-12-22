@@ -1,8 +1,8 @@
 import React from 'react';
-import {BackHandler} from 'react-native';
+import { BackHandler } from 'react-native';
 import GlobalUIManager from './GlobalUIManager';
-import {showMessage} from 'react-native-flash-message';
-import {Loading} from '../Loading';
+import { showMessage } from 'react-native-flash-message';
+import { Loading } from '../Loading';
 
 export interface GlobalUIState {
   isLoading: boolean;
@@ -22,7 +22,7 @@ export class GlobalUI extends React.PureComponent<any, GlobalUIState> {
   };
 
   showLoading = () => {
-    this.setState({isLoading: true});
+    this.setState({ isLoading: true });
     BackHandler.addEventListener('hardwareBackPress', this.disableBackHandler);
   };
 
@@ -31,10 +31,10 @@ export class GlobalUI extends React.PureComponent<any, GlobalUIState> {
   };
 
   hideLoading = () => {
-    this.setState({isLoading: false});
+    this.setState({ isLoading: false });
     BackHandler.removeEventListener(
       'hardwareBackPress',
-      this.disableBackHandler,
+      this.disableBackHandler
     );
   };
 

@@ -1,5 +1,5 @@
-import {Platform} from 'react-native';
-import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
+import { Platform } from 'react-native';
+import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 
 export const streamConfig = {
   appId: '959ee72b58c345bbb1593dfade0032ef',

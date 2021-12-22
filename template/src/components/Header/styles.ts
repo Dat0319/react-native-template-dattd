@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
-import {Spacing, FontWithBold, Colors} from '@assets';
+import { StyleSheet } from 'react-native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { Spacing, FontWithBold, Colors } from '@assets';
 
 const styles = StyleSheet.create({
   container: {

@@ -1,8 +1,8 @@
-import {store} from '@redux';
+import { store } from '@redux';
 import I18n from 'react-native-i18n';
-import {en} from './en';
-import {ja} from './jp';
-import {LocaleConfig} from 'react-native-calendars';
+import { en } from './en';
+import { ja } from './jp';
+import { LocaleConfig } from 'react-native-calendars';
 
 I18n.fallbacks = true;
 I18n.defaultLocale = 'jp';
@@ -105,4 +105,4 @@ export const initCalendar = (lang?: string) => {
   };
 };
 
-export default {...I18n, trans};
+export default { ...I18n, trans };

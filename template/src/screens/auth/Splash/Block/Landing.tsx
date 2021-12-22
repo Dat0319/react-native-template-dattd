@@ -1,14 +1,14 @@
 import React from 'react';
-import {View, Text, Image, ImageBackground} from 'react-native';
-import {CommonButton, CommonText} from '@components';
-import {useModel} from '../Splash.hook';
-import {Images} from '@assets';
-import {Props} from '../types';
-import {styles} from '../styles';
-import {I18n} from '@instances';
+import { View, Text, Image, ImageBackground } from 'react-native';
+import { CommonButton, CommonText } from '@components';
+import { useModel } from '../Splash.hook';
+import { Images } from '@assets';
+import { Props } from '../types';
+import { styles } from '../styles';
+import { I18n } from '@instances';
 
-export const Landing: React.FC<Props> = props => {
-  const {disable, _onSubmit} = useModel(props);
+export const Landing: React.FC<Props> = (props) => {
+  const { disable, _onSubmit } = useModel(props);
 
   return (
     <ImageBackground style={styles.bg} source={Images.bg_landing}>

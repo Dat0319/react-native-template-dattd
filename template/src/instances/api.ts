@@ -1,20 +1,20 @@
-import axios, {AxiosError, AxiosInstance, AxiosResponse} from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import NetInfo from '@react-native-community/netinfo';
-import {API_ERROR_CODE, ApiConfigs} from './api-config';
+import { API_ERROR_CODE, ApiConfigs } from './api-config';
 import {
   showMessageDanger,
   showMessageSuccess,
   showMessageWarning,
 } from './flashMessageCommon';
-import {getMessageError} from './getErrorCommon';
+import { getMessageError } from './getErrorCommon';
 import {
   setStorage,
   StorageConstant,
   removeItemStorage,
   getStorage,
 } from './storage';
-import {store, useSelector, RootReducerProps} from '@redux';
-import {checkErrorStatus} from './getErrorCommon';
+import { store, useSelector, RootReducerProps } from '@redux';
+import { checkErrorStatus } from './getErrorCommon';
 
 export type RequestConfigProperties = {
   showMessage: boolean;
@@ -50,11 +50,11 @@ class AxiosClass {
     this.api.interceptors.request.use(this.checkRequest, this.errorRequest);
     this.api.interceptors.response.use(
       this.interceptorResponses,
-      this.handleErrors,
+      this.handleErrors
     );
   }
 
-  checkRequest = async conf => {
+  checkRequest = async (conf) => {
     // let token = store.getState().authReducers.token;
     let token: any = await getStorage(StorageConstant.TOKEN);
     conf.headers.common['Authorization'] = token;
@@ -62,7 +62,7 @@ class AxiosClass {
     return conf;
   };
 
-  errorRequest = error => {
+  errorRequest = (error) => {
     return Promise.reject(error);
   };
 
@@ -90,14 +90,14 @@ class AxiosClass {
   handleErrors = (error: AxiosError) => {
     console.log('error', error);
     let message = '';
-    const {response, request} = error;
+    const { response, request } = error;
     console.log('interceptorResponses error response', response);
     console.log('interceptorResponses error request', request);
     if (response) {
       this.handleErrorOnResponse(response);
       return Promise.resolve(response);
     } else if (request) {
-      NetInfo.fetch().then(isConnected => {
+      NetInfo.fetch().then((isConnected) => {
         if (!isConnected) {
           message = 'No internet connection!';
         } else {
@@ -115,8 +115,8 @@ class AxiosClass {
 
   interceptorResponses = (response: AxiosResponse): Promise<any> => {
     console.log('response', response);
-    const {data, config} = response;
-    let optionShowMess = this.requestQueue.find(i => {
+    const { data, config } = response;
+    let optionShowMess = this.requestQueue.find((i) => {
       return i.id === this.incrementRequestId;
     });
     // console.log("-----optionShowMess", optionShowMess);
@@ -124,29 +124,29 @@ class AxiosClass {
     // data.showAlert && this.pushFlashMessage(data.message, config, true)
     if (!!optionShowMess?.config.showMessage) {
       showMessageSuccess(
-        (data?.data && data?.data?.errors?.message) || data?.message,
+        (data?.data && data?.data?.errors?.message) || data?.message
       );
     }
     return Promise.resolve(data);
   };
 
   async handleErrorOnResponse(response: AxiosResponse) {
-    const {data, status, config} = response;
+    const { data, status, config } = response;
     let message =
       (data?.data && data?.data?.errors?.message) ||
       data?.message ||
       getMessageError(response);
 
-    let optionShowMess = this.requestQueue.find(i => {
+    let optionShowMess = this.requestQueue.find((i) => {
       return i.id === this.incrementRequestId;
     });
     let isShowError = !!optionShowMess?.config.showMessageError;
     checkErrorStatus(response);
     isShowError &&
       showMessageWarning(
-        (data?.data && data?.data?.errors?.message) || data?.message,
+        (data?.data && data?.data?.errors?.message) || data?.message
       );
-    return Promise.reject({message});
+    return Promise.reject({ message });
   }
 
   pushReqestQueue = (config: RequestConfigProperties) => {
@@ -160,7 +160,7 @@ class AxiosClass {
   get<T>(
     url: string,
     config: RequestConfigProperties,
-    headers?: any,
+    headers?: any
   ): Promise<T> {
     this.pushReqestQueue(config);
     let headerCheck = !!headers ? headers : {};
@@ -192,7 +192,7 @@ class AxiosClass {
       showMessage: true,
       showMessageError: true,
     },
-    header: any = {},
+    header: any = {}
   ): Promise<T> {
     this.pushReqestQueue(config);
     return this.api.post(url, body, {
@@ -210,7 +210,7 @@ class AxiosClass {
     config: RequestConfigProperties = {
       showMessage: true,
       showMessageError: true,
-    },
+    }
   ): Promise<T> {
     this.pushReqestQueue(config);
     // this.api.defaults.headers['Content-Type'] = 'multipart/form-data';
@@ -230,7 +230,7 @@ class AxiosClass {
     config: RequestConfigProperties = {
       showMessage: true,
       showMessageError: true,
-    },
+    }
   ): Promise<T> {
     this.pushReqestQueue(config);
     return this.api.put(url, body, {
@@ -244,7 +244,7 @@ class AxiosClass {
   postForm<T>(
     url: string,
     body: any,
-    config: RequestConfigProperties,
+    config: RequestConfigProperties
   ): Promise<T> {
     // console.log(body, url, config);
     this.pushReqestQueue(config);

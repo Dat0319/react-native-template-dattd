@@ -1,6 +1,6 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {SCREEN_ROUTER} from '@assets';
+import { createStackNavigator } from '@react-navigation/stack';
+import { SCREEN_ROUTER } from '@assets';
 import {
   Profile,
   ProductList,
@@ -14,7 +14,7 @@ import {
   OtpPassword,
   ResetPassword,
 } from '@screens';
-import {Config} from '@instances';
+import { Config } from '@instances';
 
 const defaultNavOptions = {
   headerShown: false,

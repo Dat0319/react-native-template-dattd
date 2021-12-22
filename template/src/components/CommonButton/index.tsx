@@ -1,4 +1,4 @@
-import {Colors, FontWithBold, FontSize, Spacing} from '@assets';
+import { Colors, FontWithBold, FontSize, Spacing } from '@assets';
 import React from 'react';
 import {
   StyleSheet,
@@ -8,7 +8,7 @@ import {
   Image,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {CommonText} from '../CommonText';
+import { CommonText } from '../CommonText';
 
 export interface CommonButtonProps extends TouchableOpacityProps {
   title: string;
@@ -18,8 +18,9 @@ export interface CommonButtonProps extends TouchableOpacityProps {
   icon?: string;
 }
 
-export const CommonButton: React.FC<CommonButtonProps> = React.memo(props => {
-  let {title, disabled, icon, onPress, style, type, textStyle, ...rest} = props;
+export const CommonButton: React.FC<CommonButtonProps> = React.memo((props) => {
+  let { title, disabled, icon, onPress, style, type, textStyle, ...rest } =
+    props;
   let styleButton: any = [],
     styleText: any = [],
     startColor = Colors.purple,
@@ -58,14 +59,16 @@ export const CommonButton: React.FC<CommonButtonProps> = React.memo(props => {
       disabled={disabled}
       activeOpacity={0.8}
       onPress={onPress}
-      style={[styleButton, style]}>
+      style={[styleButton, style]}
+    >
       <LinearGradient
         style={styleButton}
-        start={{x: 0, y: 0.3}}
-        end={{x: 0.8, y: 1.0}}
+        start={{ x: 0, y: 0.3 }}
+        end={{ x: 0.8, y: 1.0 }}
         colors={[startColor, endColor]}
-        locations={[0, 1]}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        locations={[0, 1]}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           {icon && <Image style={styles.icon} source={icon} />}
           <CommonText style={styleText} numberOfLines={1}>
             {title}

@@ -53,7 +53,7 @@ export async function getMultiStorage(keys, cb?: (error: any) => void) {
 
 export async function setMultiStorage(
   keyValuePairs,
-  cb?: (error: any) => void,
+  cb?: (error: any) => void
 ) {
   try {
     return AsyncStorage.multiSet(keyValuePairs);

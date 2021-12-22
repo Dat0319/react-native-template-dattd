@@ -1,16 +1,16 @@
-import {useState} from 'react';
-import {Props} from './types';
-import {validateForm, validateTrim} from '@instances';
-import {SCREEN_ROUTER} from '@assets';
-import {useNavigation, useRoute} from '@react-navigation/native';
-import {useDispatch} from 'react-redux';
-import {AuthService} from '@services';
+import { useState } from 'react';
+import { Props } from './types';
+import { validateForm, validateTrim } from '@instances';
+import { SCREEN_ROUTER } from '@assets';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { AuthService } from '@services';
 
 export function useModel(props: Props) {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const route = useRoute();
-  const {currentEmail} = route.params;
+  const { currentEmail } = route.params;
   const [user, setUser] = useState({
     otp: '',
   });
@@ -34,17 +34,17 @@ export function useModel(props: Props) {
   };
 
   const _onChange = (key: string, value: any) => {
-    let userTemp = {...user};
+    let userTemp = { ...user };
     switch (key) {
       case 'otp':
-        userTemp = Object.assign(userTemp, {otp: value});
+        userTemp = Object.assign(userTemp, { otp: value });
         break;
     }
     setUser(userTemp);
   };
 
   const _onResendCode = async () => {
-    let result: any = await AuthService.forgot({email: currentEmail});
+    let result: any = await AuthService.forgot({ email: currentEmail });
   };
 
   const _onSubmit = async () => {
@@ -62,7 +62,7 @@ export function useModel(props: Props) {
           currentEmail: currentEmail,
         });
       } else {
-        const {data} = result.data;
+        const { data } = result.data;
         if (Object.keys(data.errors).length > 0) {
           setErrors({
             otp: !!data?.errors?.code ? data?.errors?.code[0] : '',

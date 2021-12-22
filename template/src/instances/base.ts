@@ -1,5 +1,5 @@
-import {Device} from '@assets';
-import {Linking} from 'react-native';
+import { Device } from '@assets';
+import { Linking } from 'react-native';
 export interface ActionBasePayloadProps {
   payload?: string;
 }
@@ -7,7 +7,7 @@ export interface ActionBasePayloadProps {
 export function openLinking(
   content: string,
   type: 'mail' | 'tel' | 'web' | 'whatsapp' | 'sms' | 'map',
-  extra?: string,
+  extra?: string
 ) {
   let formatContent = content.replace(/\s/g, '');
   let url = '';
@@ -66,14 +66,14 @@ export function validURL(str) {
       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
       '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
       '(\\#[-a-z\\d_]*)?$',
-    'i',
+    'i'
   ); // fragment locator
   return !!pattern.test(str);
 }
 
 export function validYoutube(str) {
   var pattern = new RegExp(
-    '(?:https?:\\/\\/)?(?:www\\.)?youtu\\.?be(?:\\.com)?\\/?.*(?:watch|embed)?(?:.*v=|v\\/|\\/)([\\w\\-_]+)\\&?',
+    '(?:https?:\\/\\/)?(?:www\\.)?youtu\\.?be(?:\\.com)?\\/?.*(?:watch|embed)?(?:.*v=|v\\/|\\/)([\\w\\-_]+)\\&?'
   ); // fragment locator
   return !!pattern.test(str);
 }
@@ -81,7 +81,7 @@ export function validYoutube(str) {
 export function parseUrl(url) {
   var match = url.match(
     // eslint-disable-next-line no-useless-escape
-    /^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/,
+    /^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/
   );
   return (
     match && {

@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {Props} from './types';
-import {setStorage, StorageConstant} from '@instances';
-import {SCREEN_ROUTER} from '@assets';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState } from 'react';
+import { Props } from './types';
+import { setStorage, StorageConstant } from '@instances';
+import { SCREEN_ROUTER } from '@assets';
+import { useNavigation } from '@react-navigation/native';
 
 export function useModel(props: Props) {
   const [intro, setIntro] = useState(true);

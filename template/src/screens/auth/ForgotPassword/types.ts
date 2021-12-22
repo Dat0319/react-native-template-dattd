@@ -1,5 +1,5 @@
-import {Route} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
+import { Route } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 
 export type Props = {
   navigation: DrawerNavigationProp<any>;

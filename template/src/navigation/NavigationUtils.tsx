@@ -15,7 +15,7 @@ export function navigate(routeName: any, params?: any) {
     CommonActions.navigate({
       name: routeName,
       params,
-    }),
+    })
   );
 }
 export function goBack() {
@@ -35,9 +35,9 @@ export function jumpTo(name, params) {
   _navigator.current?.dispatch(TabActions.jumpTo(name, params));
 }
 export function removePrevious() {
-  _navigator.dispatch(state => {
+  _navigator.dispatch((state) => {
     const routes = state?.routes.filter(
-      (item, index) => index < state?.routes?.length - 1,
+      (item, index) => index < state?.routes?.length - 1
     );
     return CommonActions.reset({
       ...state,

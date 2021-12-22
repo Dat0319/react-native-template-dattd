@@ -1,6 +1,6 @@
-import {Colors, FontSize} from '@assets';
-import {FlashMessageProps, showMessage} from 'react-native-flash-message';
-import {Platform, StatusBar} from 'react-native';
+import { Colors, FontSize } from '@assets';
+import { FlashMessageProps, showMessage } from 'react-native-flash-message';
+import { Platform, StatusBar } from 'react-native';
 
 const DURATION = 3000;
 
@@ -8,7 +8,7 @@ export const showMessageCommon = (
   type: any = 'warning',
   title: string,
   message: string,
-  props?: FlashMessageProps,
+  props?: FlashMessageProps
 ) => {
   showMessage({
     type: type,
@@ -35,13 +35,13 @@ export const showMessageDanger = (message: string) => {
 
 export const showMessageSuccess = (
   message: string,
-  props?: FlashMessageProps,
+  props?: FlashMessageProps
 ) => {
   showMessageCommon(
     'success',
     props?.message ? props.message : 'Success',
     message,
-    props,
+    props
   );
 };
 

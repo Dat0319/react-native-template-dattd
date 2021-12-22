@@ -7,7 +7,7 @@ import { AppNavigator, NavigationUtils } from '@navigation';
 import SplashScreen from 'react-native-splash-screen';
 // import codePush from 'react-native-code-push';
 import FlashMessage from 'react-native-flash-message';
-import { AppNotification } from '@instances';
+// import { AppNotification } from '@instances';
 import { PersistGate } from 'redux-persist/integration/react';
 import { StorageConstant, getStorage, api, Config } from '@instances';
 import { GlobalUI } from '@components';
@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     _environment();
     SplashScreen.hide();
-    AppNotification.init();
+    // AppNotification.init();
   }, []);
 
   const _environment = async () => {

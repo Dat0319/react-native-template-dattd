@@ -13,7 +13,7 @@
 //   },
 // ];
 // listErrors = validateForm(rules);
-import {default as I18n} from './i18n';
+import { default as I18n } from './i18n';
 interface Rule {
   key: string;
   value: any;
@@ -106,13 +106,13 @@ export function validateItem(value: any, rules: string, label: string) {
 export function checkEmpty(val: any, label: string) {
   let tempVal = val?.trim();
   if (val === '') {
-    let name = I18n.trans('error.fieldRequired', {label: label});
+    let name = I18n.trans('error.fieldRequired', { label: label });
     // let name = 'The ' + label + ' field is required.';
     return name;
   }
   if (label === 'password' || label === 'password confirmation') {
     if (tempVal.length !== val.length) {
-      let name = I18n.trans('error.fieldRequired', {label: label});
+      let name = I18n.trans('error.fieldRequired', { label: label });
       return name;
     }
   }
@@ -121,7 +121,7 @@ export function checkEmpty(val: any, label: string) {
 }
 export function minLength(val: any, length: string | undefined, label: string) {
   if (val != '' && val.length < Number(length)) {
-    let name = I18n.trans('error.minLength', {label: label, length: length});
+    let name = I18n.trans('error.minLength', { label: label, length: length });
     // let name = 'The ' + label + ' must be at least ' + length + ' characters';
     return name;
   }
@@ -130,7 +130,7 @@ export function minLength(val: any, length: string | undefined, label: string) {
 
 export function maxLength(val: any, length: string | undefined, label: string) {
   if (val !== '' && val.length > Number(length)) {
-    let name = I18n.trans('error.maxLength', {label: label, length: length});
+    let name = I18n.trans('error.maxLength', { label: label, length: length });
     // let name =  'The ' + label + ' may not be greater than ' + length + ' characters';
     return name;
   }
@@ -140,7 +140,7 @@ export function maxLength(val: any, length: string | undefined, label: string) {
 export function checkConfirmPassword(
   value: any,
   check_value: string | any,
-  label: string,
+  label: string
 ) {
   if (
     value !== '' &&
@@ -159,7 +159,7 @@ export function checkMail(val: any, label: string) {
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let is_email = regex.test(val?.trim());
     if (!is_email) {
-      let name = I18n.trans('error.emailValid', {email: label});
+      let name = I18n.trans('error.emailValid', { email: label });
       // let name = 'The ' + label + ' must be a valid email address.';
       return name;
     }
@@ -222,7 +222,7 @@ export function checkImage(val: any, label: string) {
     let regex = /[\/.](gif|jpg|jpeg|tiff|png)$/i;
     let is_image = regex.test(val);
     if (!is_image) {
-      let name = I18n.trans('error.imageValid', {label: label});
+      let name = I18n.trans('error.imageValid', { label: label });
       // let name ='The ' + label + ' incorrect format! include .png, .jpg, .jpeg type.';
       return name;
     }
@@ -231,7 +231,7 @@ export function checkImage(val: any, label: string) {
 }
 export function checkImageFile(val: any, size: number | string, label: string) {
   if (Number(size) / (2048 * 1024) > 2) {
-    let name = I18n.trans('error.imageFileSize', {label: label});
+    let name = I18n.trans('error.imageFileSize', { label: label });
     // let name ='The' + label + ' must less than 2MB.';
     return name;
   }

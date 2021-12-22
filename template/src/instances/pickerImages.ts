@@ -1,8 +1,8 @@
 import ImagePicker from 'react-native-image-picker';
 import ImageResizer from 'react-native-image-resizer';
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
-import {I18n} from '@instances';
+import { I18n } from '@instances';
 /**
  * Image Picker from Local Library
  * @author
@@ -22,7 +22,7 @@ export const imagePicker = (title, cb) => {
       path: 'images',
     },
   };
-  ImagePicker.showImagePicker(options, async response => {
+  ImagePicker.showImagePicker(options, async (response) => {
     if (response.didCancel) {
       console.log('User cancelled image picker');
     } else if (response.error) {
@@ -49,8 +49,8 @@ export const imagePicker = (title, cb) => {
           height,
           'JPEG',
           quality,
-          0,
-        ).then(uri => {
+          0
+        ).then((uri) => {
           if (uri) {
             if (uri.uri) {
               path = uri.uri;
@@ -87,8 +87,8 @@ export const resizeImage = async (source: any, quality: number) => {
     source.height,
     'JPEG',
     quality,
-    0,
-  ).then(uri => {
+    0
+  ).then((uri) => {
     return uri;
   });
 };

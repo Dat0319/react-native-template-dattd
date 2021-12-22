@@ -1,9 +1,9 @@
-import {useState} from 'react';
-import {Props} from './types';
-import {validateForm, validateTrim} from '@instances';
-import {SCREEN_ROUTER} from '@assets';
-import {useNavigation} from '@react-navigation/native';
-import {AuthService} from '@services';
+import { useState } from 'react';
+import { Props } from './types';
+import { validateForm, validateTrim } from '@instances';
+import { SCREEN_ROUTER } from '@assets';
+import { useNavigation } from '@react-navigation/native';
+import { AuthService } from '@services';
 
 export function useModel(props: Props) {
   const navigation = useNavigation();
@@ -30,10 +30,10 @@ export function useModel(props: Props) {
   };
 
   const _onChange = (key: string, value: any) => {
-    let userTemp = {...user};
+    let userTemp = { ...user };
     switch (key) {
       case 'email':
-        userTemp = Object.assign(userTemp, {email: value});
+        userTemp = Object.assign(userTemp, { email: value });
         break;
     }
     setUser(userTemp);
@@ -51,7 +51,7 @@ export function useModel(props: Props) {
           currentEmail: user.email,
         });
       } else {
-        const {data} = result.data;
+        const { data } = result.data;
         if (Object.keys(data.errors).length > 0) {
           setErrors({
             email: !!data?.errors?.email ? data?.errors?.email[0] : '',

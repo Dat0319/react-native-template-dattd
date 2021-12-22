@@ -1,8 +1,8 @@
-import {RFPercentage} from 'react-native-responsive-fontsize';
-import {Device} from './device';
-import {Dimensions, StyleSheet} from 'react-native';
-import {isIphoneX} from 'react-native-iphone-x-helper';
-import {isIPhoneXMax} from 'react-native-status-bar-height';
+import { RFPercentage } from 'react-native-responsive-fontsize';
+import { Device } from './device';
+import { Dimensions, StyleSheet } from 'react-native';
+import { isIphoneX } from 'react-native-iphone-x-helper';
+import { isIPhoneXMax } from 'react-native-status-bar-height';
 
 const BASE_FONT_SIZE = 2;
 function ReduceTextFor18_9(number: number) {
@@ -15,7 +15,7 @@ function calculateFontsize(current: number, max: number) {
   return current <= max ? current : max;
 }
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 const DW = 375;
 const DH = 812;
 const vh = height / DH;
@@ -26,91 +26,91 @@ const sizeHeight = (number: number) => number * (width > height ? vw : vh);
 export const FontSize = {
   Font9: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(-0.25)),
-    9,
+    9
   ),
   Font10: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(-0.25)),
-    10,
+    10
   ),
   Font11: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0)),
-    11,
+    11
   ),
   Font12: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0.25)),
-    12,
+    12
   ),
   Font13: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0.25)),
-    13,
+    13
   ),
   Font14: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0.5)),
-    14,
+    14
   ),
   Font15: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0.5)),
-    15,
+    15
   ),
   Font16: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0.6)),
-    16,
+    16
   ),
   Font17: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0.75)),
-    17,
+    17
   ),
   Font18: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(0.8)),
-    18,
+    18
   ),
   Font19: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(1)),
-    19,
+    19
   ),
   Font20: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(1.25)),
-    20,
+    20
   ),
   Font21: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(1.5)),
-    21,
+    21
   ),
   Font24: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(1.75)),
-    24,
+    24
   ),
   Font25: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(2)),
-    25,
+    25
   ),
   Font27: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(2.5)),
-    27,
+    27
   ),
   Font28: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(2.6)),
-    28,
+    28
   ),
   Font30: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(2.7)),
-    30,
+    30
   ),
   Font32: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(3)),
-    32,
+    32
   ),
   Font35: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(3.5)),
-    35,
+    35
   ),
   Font40: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(4)),
-    40,
+    40
   ),
   Font45: calculateFontsize(
     RFPercentage(BASE_FONT_SIZE + ReduceTextFor18_9(4)),
-    45,
+    45
   ),
 };
 

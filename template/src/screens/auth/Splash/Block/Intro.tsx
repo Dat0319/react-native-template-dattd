@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {View, Animated, Easing} from 'react-native';
-import {Colors, Images} from '@assets';
-import {Props} from '../types';
-import {styles} from '../styles';
+import React, { useState, useEffect } from 'react';
+import { View, Animated, Easing } from 'react-native';
+import { Colors, Images } from '@assets';
+import { Props } from '../types';
+import { styles } from '../styles';
 import LinearGradient from 'react-native-linear-gradient';
 
-export const Intro: React.FC<Props> = props => {
-  const {result} = props;
+export const Intro: React.FC<Props> = (props) => {
+  const { result } = props;
   const [opacity, setOpacity] = useState(new Animated.Value(0));
   const [opacityText, setOpacityText] = useState(new Animated.Value(0));
   const [visible, setVisible] = useState(false);
@@ -59,11 +59,11 @@ export const Intro: React.FC<Props> = props => {
 
   return (
     <View style={styles.container}>
-      <Animated.View style={[styles.container, {opacity: opacityReverse}]}>
+      <Animated.View style={[styles.container, { opacity: opacityReverse }]}>
         <LinearGradient
           style={styles.container}
-          start={{x: 0, y: 0.3}}
-          end={{x: 0.8, y: 1.0}}
+          start={{ x: 0, y: 0.3 }}
+          end={{ x: 0.8, y: 1.0 }}
           colors={[startColor, endColor]}
           locations={[0, 1]}
         />
@@ -73,7 +73,7 @@ export const Intro: React.FC<Props> = props => {
           styles.triangle,
           {
             opacity: opacityReverse,
-            transform: [{scale: triangleScale}, {rotate: triangleRotate}],
+            transform: [{ scale: triangleScale }, { rotate: triangleRotate }],
           },
         ]}
         source={Images.ic_triangle}
@@ -83,13 +83,13 @@ export const Intro: React.FC<Props> = props => {
           styles.logo_s,
           {
             opacity: opacityReverse,
-            transform: [{scale: logoScale}],
+            transform: [{ scale: logoScale }],
           },
         ]}
         source={Images.ic_logo_s}
       />
       <Animated.Image
-        style={[styles.logo_triangle, visible && {opacity: 1}]}
+        style={[styles.logo_triangle, visible && { opacity: 1 }]}
         source={Images.ic_logo_text}
       />
     </View>

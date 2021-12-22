@@ -1,11 +1,11 @@
-import {API_ERROR_CODE} from './api-config';
-import {AxiosResponse} from 'axios';
-import {store, logout} from '@redux';
-import {removeItemStorage, StorageConstant} from './storage';
+import { API_ERROR_CODE } from './api-config';
+import { AxiosResponse } from 'axios';
+import { store, logout } from '@redux';
+import { removeItemStorage, StorageConstant } from './storage';
 import api from './api';
 
 export async function getMessageError(response: AxiosResponse) {
-  const {data, status, config} = response;
+  const { data, status, config } = response;
   let message = '';
   let error: any = 0;
 
@@ -65,7 +65,7 @@ export async function getMessageError(response: AxiosResponse) {
 }
 
 export async function checkErrorStatus(response: AxiosResponse) {
-  const {data, status, config} = response;
+  const { data, status, config } = response;
 
   switch (status) {
     case API_ERROR_CODE.REQUEST_ERROR.CODE:
@@ -89,11 +89,11 @@ export async function checkErrorStatus(response: AxiosResponse) {
 
 export function getValidateMessage(data: {
   message: string;
-  errors: {[key: string]: Array<string>};
+  errors: { [key: string]: Array<string> };
 }) {
   try {
-    const {errors} = data;
-    let listError = Object.keys(errors).map(key => {
+    const { errors } = data;
+    let listError = Object.keys(errors).map((key) => {
       return errors[key].pop();
     });
 

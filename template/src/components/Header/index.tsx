@@ -1,4 +1,4 @@
-import {Colors, Images, Spacing, Shadow} from '@assets';
+import { Colors, Images, Spacing, Shadow } from '@assets';
 import React from 'react';
 import {
   View,
@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import styles from './styles';
-import {useModel} from './Header.hook';
-import {useSelector, RootReducerProps} from '@redux';
+import { useModel } from './Header.hook';
+import { useSelector, RootReducerProps } from '@redux';
 export interface HeaderProps {
   left?: string;
   right?: string;
@@ -30,7 +30,7 @@ export interface HeaderProps {
   borderBottom?: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = React.memo(props => {
+export const Header: React.FC<HeaderProps> = React.memo((props) => {
   let {
     left,
     center,
@@ -46,9 +46,11 @@ export const Header: React.FC<HeaderProps> = React.memo(props => {
     renderCustom,
     borderBottom = false,
   } = props;
-  const {_onLeftPress, _onRightPress, _gotoSearch, _gotoCart, _gotoAccount} =
+  const { _onLeftPress, _onRightPress, _gotoSearch, _gotoCart, _gotoAccount } =
     useModel(props);
-  const user = useSelector<RootReducerProps>(state => state.authReducers.user);
+  const user = useSelector<RootReducerProps>(
+    (state) => state.authReducers.user
+  );
 
   const _renderLeft = () => {
     if (left === 'back') {
@@ -121,7 +123,8 @@ export const Header: React.FC<HeaderProps> = React.memo(props => {
         <TouchableOpacity
           activeOpacity={1}
           style={styles.shoppingCart}
-          onPress={() => {}}>
+          onPress={() => {}}
+        >
           <View style={styles.shoppingCartStatus} />
           <FastImage
             resizeMode="contain"
@@ -137,10 +140,11 @@ export const Header: React.FC<HeaderProps> = React.memo(props => {
           <TouchableOpacity
             onPress={_gotoSearch}
             style={styles.itemHome}
-            activeOpacity={1}>
+            activeOpacity={1}
+          >
             <FastImage
               resizeMode="contain"
-              style={[styles.ic_cart, {tintColor: Colors.white}]}
+              style={[styles.ic_cart, { tintColor: Colors.white }]}
               source={Images.ic_search}
               tintColor={Colors.white}
             />
@@ -148,7 +152,8 @@ export const Header: React.FC<HeaderProps> = React.memo(props => {
           <TouchableOpacity
             onPress={_gotoCart}
             style={styles.itemHome}
-            activeOpacity={1}>
+            activeOpacity={1}
+          >
             <FastImage
               resizeMode="contain"
               style={styles.ic_cart}
@@ -158,7 +163,8 @@ export const Header: React.FC<HeaderProps> = React.memo(props => {
           <TouchableOpacity
             onPress={_gotoAccount}
             style={styles.itemHome}
-            activeOpacity={1}>
+            activeOpacity={1}
+          >
             <FastImage
               resizeMode="cover"
               style={styles.ic_avatar}
@@ -182,7 +188,8 @@ export const Header: React.FC<HeaderProps> = React.memo(props => {
         backgroundColor !== undefined && {
           backgroundColor: backgroundColor,
         },
-      ]}>
+      ]}
+    >
       <StatusBar
         barStyle={barStyle}
         backgroundColor={'transparent'}
@@ -194,19 +201,22 @@ export const Header: React.FC<HeaderProps> = React.memo(props => {
           <TouchableOpacity
             activeOpacity={1}
             style={[styles.left, styleLeft]}
-            onPress={() => _onLeftPress()}>
+            onPress={() => _onLeftPress()}
+          >
             {_renderLeft()}
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={1}
             onPress={onCenterPress}
-            style={[styles.center, styleCenter]}>
+            style={[styles.center, styleCenter]}
+          >
             {_renderCenter()}
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={1}
             style={[styles.right, styleRight]}
-            onPress={() => _onRightPress()}>
+            onPress={() => _onRightPress()}
+          >
             {_renderRight()}
           </TouchableOpacity>
         </View>

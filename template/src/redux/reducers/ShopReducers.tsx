@@ -1,4 +1,4 @@
-import {SHOP_INFO, SHOP_LOGOUT} from '../actions/type';
+import { SHOP_INFO, SHOP_LOGOUT } from '../actions/type';
 
 export interface ShopReducersInterface {
   details: {
@@ -20,7 +20,7 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action: any) => {
-  const {type, payload} = action;
+  const { type, payload } = action;
 
   switch (type) {
     case SHOP_INFO:

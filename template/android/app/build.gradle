@@ -184,6 +184,7 @@ android {
 
             // reduce app size
             shrinkResources true
+            minifyEnabled true
 
             // config output app
             applicationVariants.all { variant ->

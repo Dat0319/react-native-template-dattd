@@ -1,14 +1,14 @@
-import {useState} from 'react';
-import {Props} from './types';
-import {validateForm, validateTrim} from '@instances';
-import {SCREEN_ROUTER} from '@assets';
-import {useNavigation, useRoute} from '@react-navigation/native';
-import {AuthService} from '@services';
+import { useState } from 'react';
+import { Props } from './types';
+import { validateForm, validateTrim } from '@instances';
+import { SCREEN_ROUTER } from '@assets';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { AuthService } from '@services';
 
 export function useModel(props: Props) {
   const navigation = useNavigation();
   const route = useRoute();
-  const {currentEmail} = route.params;
+  const { currentEmail } = route.params;
   const [user, setUser] = useState({
     email: currentEmail,
     password: '',
@@ -41,13 +41,13 @@ export function useModel(props: Props) {
   };
 
   const _onChange = (key: string, value: any) => {
-    let userTemp = {...user};
+    let userTemp = { ...user };
     switch (key) {
       case 'password':
-        userTemp = Object.assign(userTemp, {password: value});
+        userTemp = Object.assign(userTemp, { password: value });
         break;
       case 'confirm_password':
-        userTemp = Object.assign(userTemp, {confirm_password: value});
+        userTemp = Object.assign(userTemp, { confirm_password: value });
         break;
     }
     setUser(userTemp);
@@ -65,9 +65,9 @@ export function useModel(props: Props) {
       });
       setDisable(false);
       if (result.code === 200) {
-        navigation.navigate(SCREEN_ROUTER.LOGIN, {currentEmail: user.email});
+        navigation.navigate(SCREEN_ROUTER.LOGIN, { currentEmail: user.email });
       } else {
-        const {data} = result.data;
+        const { data } = result.data;
         if (Object.keys(data.errors).length > 0) {
           setErrors({
             ...errors,
