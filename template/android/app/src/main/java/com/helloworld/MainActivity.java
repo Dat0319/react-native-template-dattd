@@ -2,6 +2,11 @@ package com.helloworld;
 
 import com.facebook.react.ReactActivity;
 
+// import android.content.Intent; // <--- import
+// import android.content.res.Configuration; // <--- import
+// import org.devio.rn.splashscreen.SplashScreen;
+// SplashScreen.show(this); // here
+
 public class MainActivity extends ReactActivity {
 
   /**

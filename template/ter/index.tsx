@@ -1,3 +1,6 @@
+// yarn update all lib
+// yarn upgrade --latest
+
 // LIB:
 // react-native-code-push
 // @react-native-community/checkbox
