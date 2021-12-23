@@ -1,4 +1,4 @@
-# Shop Stream
+# Template
 
 Dating application help connecting you to the one you like.
 
@@ -17,7 +17,7 @@ Follow this guideline from React Native website: https://reactnative.dev/docs/en
 2. Clone project
 
 ```
-git clone git@adamosystem.com:shop-streaming/shop-streaming-merchant.git
+git clone https//: link git
 ```
 
 3. Install library
@@ -60,9 +60,9 @@ Yarn android
 ├────────────┼───────────────────────────────────────┼
 │ Staging │ codepushandroidstaging
 
-### code-push deployment ls TruckerAndroid -k
+### code-push deployment ls ProjectAndroid -k
 
-### code-push deployment ls TruckerIos -k
+### code-push deployment ls ProjectIos -k
 
 │ Production │ codepushiosstaging │
 ├────────────┼───────────────────────────────────────┤

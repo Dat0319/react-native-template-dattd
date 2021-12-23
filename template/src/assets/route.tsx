@@ -8,9 +8,4 @@ export const SCREEN_ROUTER = {
 
   // *** App
   PROFILE: 'profile',
-  PRODUCT_LIST: 'product_list',
-  PRODUCT_DETAIL: 'product_detail',
-  SCHEDULE_STREAM: 'schedule_stream',
-  SETUP_STREAM: 'setup_stream',
-  CAMERA_PREVIEW: 'camera_preview',
 };

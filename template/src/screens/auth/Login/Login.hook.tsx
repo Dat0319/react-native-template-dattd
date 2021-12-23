@@ -10,11 +10,9 @@ import { AuthService } from '@services';
 export function useModel(props: Props) {
   const dispatch = useDispatch();
   const [user, setUser] = useState({
-    // email: 'nguyet.nguyen@adamodigital.com',
+    // email: 'test1@gmail.com',
     // password: '123456789',
-    // email: 'daominhduc190999+1@gmail.com',
-    // password: '12345678',
-    email: 'donhat36@gmail.com',
+    email: 'test@gmail.com',
     password: '12345678',
   });
   const [errors, setErrors] = useState({
